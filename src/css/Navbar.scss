@@ -1,0 +1,60 @@
+@font-face
+{
+    font-family: "Galano Grotesque";
+    src: url("../fonts/GalanoGrotesqueRegular.otf");
+}
+
+@font-face
+{
+    font-family: "Galano Grotesque Bold";
+    src: url("../fonts/GalanoGrotesqueBold.otf");
+}
+
+.Navbar
+{
+    display: flex;
+    background-color: white;
+    font-family: "Galano Grotesque Bold";
+    align-items: baseline;
+    border-bottom: black solid 2px;
+    height: 85px;
+
+    #me{
+        margin-left: 5%;
+        font-size: 25px;
+        font-weight: bolder;
+        width: 250px;
+    }
+
+    .items{
+        display: flex;
+        width: 75%;
+        transform: translateX(30%);
+
+        .nav-item{
+            width: 100px;
+            height: 85px;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            &:hover{
+                background-color: lighten($color: grey, $amount: 35%);
+                height: 83px;
+                border-bottom: black solid 3px;
+            }
+        }
+    }
+
+    .chat{
+        height: 50px;
+        width: 150px;
+        margin-right: 5%;
+        background-color: white;
+        border-radius: 8px;
+        border: black solid 3px;
+        font-family: "Galano Grotesque Bold";
+    }
+}
+
