@@ -1,5 +1,6 @@
 import "../css/About.scss";
-import avatar from "../assets/avatar.svg";
+import Skills from "./Skills"
+import avatar from "../assets/630.png";
 
 function About() {
   return (
@@ -8,12 +9,15 @@ function About() {
         <p>Hi! I'm Tsilavo </p>
         <p>IT Developer</p>
         <p id="infos">
-          Student in IT dev, created some games as hobby and fanatics of
+          Working in IT dev environment, created some games as hobby and fanatics of
           electrionic stuffs
         </p>
         <div class="hire-me">
           <button class="hire-button">Hire me</button>
           <button class="projects-button">Projects</button>
+        </div>
+        <div className="skills">
+            <Skills/>
         </div>
       </div>
       <div class="About-section-avatar">

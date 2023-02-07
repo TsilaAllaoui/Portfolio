@@ -1,3 +1,5 @@
+@import "../css/colors.scss";
+
 @font-face
 {
     font-family: "Galano Grotesque";
@@ -12,49 +14,59 @@
 
 .Navbar
 {
+    position: sticky;
+    top: 0;
     display: flex;
-    background-color: white;
+    background-color: $dark;
     font-family: "Galano Grotesque Bold";
     align-items: baseline;
-    border-bottom: black solid 2px;
+    // border-bottom: white solid 2px;
     height: 85px;
 
     #me{
         margin-left: 5%;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: bolder;
-        width: 250px;
+        width: 300px;
+        color: white;
     }
 
     .items{
         display: flex;
         width: 75%;
-        transform: translateX(30%);
+        transform: translateX(22%);
 
         .nav-item{
             width: 100px;
             height: 85px;
-            color: black;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             text-decoration: none;
             &:hover{
-                background-color: lighten($color: grey, $amount: 35%);
-                height: 83px;
-                border-bottom: black solid 3px;
+                background-color: lighten($color: $dark, $amount: 15%);
+                border-bottom: white solid 3px;
+                transform: translateY(-3px);
             }
         }
     }
 
     .chat{
+        z-index: 1;
         height: 50px;
         width: 150px;
         margin-right: 5%;
-        background-color: white;
+        background-color: $dark;
         border-radius: 8px;
-        border: black solid 3px;
+        border: white solid 3px;
         font-family: "Galano Grotesque Bold";
+        color: white;
+        &:hover{
+            color: $dark;
+            border: $dark solid 3px;
+            background-color: white;
+        }
     }
 }
 

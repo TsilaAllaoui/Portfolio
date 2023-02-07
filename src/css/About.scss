@@ -1,5 +1,7 @@
+@import "../css/colors.scss";
+
 .About-container{
-    height: 500px;
+    height: 105vh;
     background-color: whitesmoke;
     display: flex;
     justify-content: space-between;
@@ -8,7 +10,7 @@
         font-family: "Galano Grotesque Bold";
         height: 100%;
         width: 50%;
-        background-color: whitesmoke;
+        background-color: $purple-primary;
         text-align: center;
 
         p{
@@ -33,27 +35,27 @@
 
             .hire-button{
                 font-family: "Galano Grotesque Bold";
-                background-color: darkorange;
+                background-color: $purple-dark;
                 color: white;
                 border-radius: 8px;
                 border: none;
                 transition: 500ms;
                 &:hover{
                     background-color: white;
-                    color: darkorange;
-                    border: darkorange solid 5px;
+                    color: $purple-dark;
+                    border: $purple-dark solid 5px;
                 }
             }
             
             .projects-button{
                 font-family: "Galano Grotesque Bold";
                 background-color: white;
-                color: black;
+                color: $purple-dark;
                 border-radius: 8px;
                 border: none;
                 transition: 500ms;
                 &:hover{
-                    background-color: black;
+                    background-color: $purple-dark;
                     color: white;
                     border: white solid 5px;
 
