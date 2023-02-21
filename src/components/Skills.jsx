@@ -27,6 +27,7 @@ function Skills() {
                     ["JS", "15"],
                     ["VBS", "25"],
                     ["AutoCAD/GstarCAD", "70"],
+                    ["ObjectARX", "80"],
                    ];
 
     return <div>

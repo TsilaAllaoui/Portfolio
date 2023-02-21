@@ -36,8 +36,12 @@ function Project(props)
 
 function Projects()
 {
-    return <div class="Projects-container">
-        {projects.map((item, index) => <Project name={item.name} desc={item.desc}/>)}
+    return <div className="container">
+        <p>Projects</p>
+        <div class="Projects-container">
+            {projects.map((item, index) => <Project name={item.name} desc={item.desc}/>)}
+        </div>
+        <div className="more">See more...</div>
     </div>;
 }
 

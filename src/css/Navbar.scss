@@ -48,6 +48,7 @@
                 background-color: lighten($color: $dark, $amount: 15%);
                 border-bottom: white solid 3px;
                 transform: translateY(-3px);
+                transition: 400ms;
             }
         }
     }
@@ -62,10 +63,13 @@
         border: white solid 3px;
         font-family: "Galano Grotesque Bold";
         color: white;
+        transition: 750ms;
         &:hover{
             color: $dark;
             border: $dark solid 3px;
             background-color: white;
+            transform: scale(1.1);
+            transition: 750ms;
         }
     }
 }

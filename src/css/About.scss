@@ -44,6 +44,8 @@
                     background-color: white;
                     color: $purple-dark;
                     border: $purple-dark solid 5px;
+                    transition: 500ms;
+                    transform: scale(1.1);
                 }
             }
             
@@ -58,7 +60,8 @@
                     background-color: $purple-dark;
                     color: white;
                     border: white solid 5px;
-
+                    transition: 500ms;
+                    transform: scale(1.1);
                 }
             }
         }
