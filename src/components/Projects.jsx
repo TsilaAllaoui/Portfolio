@@ -1,21 +1,35 @@
 import "../css/Projects.scss"
 import placeholder from "../assets/placeholder.svg"
 
-function Project()
+const projects = [
+    {
+        name: "GasyBoy Emulator",
+        desc: "A Gameboy Emulator written in C++ and use SDL2 for the graphics and GUI"
+    }
+]
+
+function Project(props)
 {
-    return <div class="Project">
-        <div class="header">
-            <p>Project1</p>
+    return <div className="card-container">
+        <div className="card">
+            <div className="image">
+                <img src={placeholder} alt="" />
+            </div>
+            <div className="card-details">
+                <div className="name">{props.name}</div>
+                <div className="desc">
+                    <p>{props.desc}</p>
+                </div>
+                <div className="goto">Go to project</div>
+            </div>
         </div>
-        <span>Description</span>
-        <img src={placeholder} alt="" />
     </div>;
 }
 
 function Projects()
 {
     return <div class="Projects-container">
-        <Project/>
+        {projects.map((item, index) => <Project name={item.name} desc={item.desc}/>)}
     </div>;
 }
 
