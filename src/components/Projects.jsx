@@ -5,7 +5,15 @@ const projects = [
     {
         name: "GasyBoy Emulator",
         desc: "A Gameboy Emulator written in C++ and use SDL2 for the graphics and GUI"
-    }
+    },
+    {
+        name: "Maze",
+        desc: "Pacman themed maze generated with Prim's algorithm with runner solver"
+    },
+    {
+        name: "CPPCRUD",
+        desc: "imple CRUD powered by C++ CGI and MySQL "
+    },
 ]
 
 function Project(props)

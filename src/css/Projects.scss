@@ -13,9 +13,12 @@
         height: 300px;
         margin: 50px auto;
         .card{
+            box-shadow: 6px 18px 26px -5px $purple-dark;
             background-color: white;
-            border: 1px solid grey;
+            border: 1px solid rgb(148, 141, 141);
             border-radius: 18px;
+            margin-bottom: 50px;
+            width: 450px;
             .image{
                 padding: 8px;
                 img{
@@ -26,8 +29,10 @@
                     transition: 750ms;
 
                     &:hover{
-                        transform: scale(1.25);
+                        transform: scale(1.1);
                         transition: 750ms;
+                        border-radius: 15px;
+                        box-shadow: 6px 18px 26px -5px $purple-dark;
                     }
                 }
             }
@@ -68,6 +73,7 @@
                     &:hover{
                         color: $purple-dark;
                         background-color: white;
+                        transform: scale(1.1);
                         transition: 750ms;
                     }
                 }
