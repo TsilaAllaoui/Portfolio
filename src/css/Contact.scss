@@ -1,4 +1,79 @@
-.contact{
-    height: 100vh;
-    background-color: whitesmoke;
+@import "../css/colors.scss";
+
+@mixin link{
+    display: flex;
+    align-items: center;
+    transform: rotate(25deg);
+    margin-top: 60px;
+    width: 150px;
+    .line{
+        margin: 88px 0;
+        border: solid $primary-darker 1px;
+        border-radius: 15px;
+        height: 1px;
+        width: 100%;
+        background-color: $primary-darker;
+    }
+    .dot{
+        border: solid $primary-darker 3px;
+        background-color: $primary-darker;
+        border-radius: 100%;
+        width: 3px;
+        height: 3px;
+    }
 }
+
+@mixin social-link{
+    width: 50px;
+    height: 50px; 
+    overflow: visible;
+    &:hover{
+        transform: scale(1.5) rotate(360deg);
+        transition: 750ms;
+    }
+}
+
+@mixin lines{
+    width: 150px;
+    height: 50px; 
+}
+
+.contact{
+    height: 300px;
+    background-color: whitesmoke;
+    .social{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        #github{
+            margin-top: 20px;
+            @include social-link();
+        }
+        #fb{
+            margin-top: 100px;
+            @include social-link();
+        }
+        #linkedin{
+            margin-top: 20px;
+            @include social-link;
+        }
+        .linker{
+            @include link;
+            @include lines;
+        }
+        .linker-right{
+            @include link;
+            @include lines;
+            transform: rotate(-25deg);
+        }
+    }
+    .copyright{
+        font-size: medium;
+        font-weight: 600;
+        display: flex;
+        justify-content: flex-end;
+        margin: 100px 50px;
+    }
+}
+
