@@ -1,79 +1,74 @@
 @import "../css/colors.scss";
 
-.About-container{
-    height: 105vh;
-    background-color: whitesmoke;
-    display: flex;
-    justify-content: space-between;
+.About-container {
+  height: 105vh;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
 
-    .About-section-infos{
+  .About-section-infos {
+    font-family: "Galano Grotesque Bold";
+    height: 100%;
+    width: 50%;
+    background-color: $primary;
+    text-align: center;
+    p {
+      font-size: 50px;
+    }
+    #infos {
+      font-size: small;
+    }
+    button {
+      height: 60px;
+      width: 120px;
+    }
+    .hire-me {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      gap: 50px;
+      .hire-button {
         font-family: "Galano Grotesque Bold";
-        height: 100%;
-        width: 50%;
-        background-color: $purple-primary;
-        text-align: center;
-
-        p{
-            font-size: 50px;
+        background-color: $primary-darker;
+        color: white;
+        border-radius: 8px;
+        border: none;
+        transition: 500ms;
+        &:hover {
+          background-color: white;
+          color: $primary-darker;
+          border: $primary-darker solid 5px;
+          transition: 500ms;
+          transform: scale(1.1);
         }
-
-        #infos{
-            font-size: small;
-        }
-
-        button{
-            height: 60px;
-            width: 120px;
-        }
-    
-        .hire-me{
-
-            display: flex;
-            justify-content: center;
-            margin-top: 50px;
-            gap: 50px;
-
-            .hire-button{
-                font-family: "Galano Grotesque Bold";
-                background-color: $purple-dark;
-                color: white;
-                border-radius: 8px;
-                border: none;
-                transition: 500ms;
-                &:hover{
-                    background-color: white;
-                    color: $purple-dark;
-                    border: $purple-dark solid 5px;
-                    transition: 500ms;
-                    transform: scale(1.1);
-                }
-            }
-            
-            .projects-button{
-                font-family: "Galano Grotesque Bold";
-                background-color: white;
-                color: $purple-dark;
-                border-radius: 8px;
-                border: none;
-                transition: 500ms;
-                &:hover{
-                    background-color: $purple-dark;
-                    color: white;
-                    border: white solid 5px;
-                    transition: 500ms;
-                    transform: scale(1.1);
-                }
-            }
-        }
-    }
-
-    .About-section-avatar{
-        height: 100%;
+      }
+      .projects-button {
+        font-family: "Galano Grotesque Bold";
+        font-size: medium;
+        font-weight: 900;
         background-color: white;
-        width: 50%;
-        img {
-            height: 100%;
-            width: 100%;
-        };
+        color: $primary-darker;
+        border-radius: 8px;
+        border: none;
+        transition: 500ms;
+        &:hover {
+          background-color: $primary-darker;
+          color: white;
+          border: white solid 5px;
+          transition: 500ms;
+          transform: scale(1.1);
+        }
+      }
     }
+  }
+
+  .About-section-avatar {
+    height: 100%;
+    background-color: white;
+    width: 50%;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }

@@ -4,37 +4,50 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    p{
-        margin: 40px auto 0 auto;
-        font-size: 75px;
-        font-weight: 700;
-        color: $purple-primary;
-        text-shadow:5px 5px grey;
+    padding: 50px 0;
+    .separator{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p{
+            margin: 5px auto 0 auto;
+            font-size: 50px;
+            font-weight: 700;
+            color: $primary-dark;
+            transition: 750ms;
+        }
+       .hseparator{
+        margin-top: 20px;
+        border: solid $primary-dark 3px;
+        background-color: $primary-dark;
+        width: 100px;
+        border-radius: 15px;
+       }
+       &:hover{
+        transform: scale(1.1);
+        transition: 750ms;
+        color: $primary-darker;
+        }
     }
-
     .Projects-container {
         height: 90vh;
         margin-top: 50px;
         display: flex;
-
         .card-container {
             * {
                 font-size: large;
                 font-weight: 800;
             }
-
             max-width: 500px;
             height: 300px;
             margin: 50px auto;
-
             .card {
-                box-shadow: 6px 18px 26px -5px $purple-dark;
+                box-shadow: 6px 18px 26px -5px $primary-darker;
                 background-color: white;
                 border: 1px solid rgb(148, 141, 141);
                 border-radius: 18px;
                 margin-bottom: 50px;
                 width: 450px;
-
                 .image {
                     padding: 8px;
 
@@ -49,11 +62,10 @@
                             transform: scale(1.1);
                             transition: 750ms;
                             border-radius: 15px;
-                            box-shadow: 6px 18px 26px -5px $purple-dark;
+                            box-shadow: 6px 18px 26px -5px $primary-darker;
                         }
                     }
                 }
-
                 .card-details {
                     display: flex;
                     flex-direction: column;
@@ -63,12 +75,11 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        background-color: $purple-dark;
+                        background-color: $primary-dark;
                         height: 75px;
                         width: 100%;
                         color: white;
                     }
-
                     .desc {
                         padding: 20px;
 
@@ -77,23 +88,21 @@
                             font-weight: 100;
                         }
                     }
-
                     .goto {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        border: 3px solid $purple-dark;
+                        border: 5px solid $primary-darker;
                         border-radius: 10px;
                         width: 200px;
                         height: 40px;
-                        background-color: $purple-dark;
+                        background-color: $primary-darker;
                         color: white;
                         margin: 20px auto 50px auto;
                         font-size: small;
                         transition: 500ms;
-
                         &:hover {
-                            color: $purple-dark;
+                            color: $primary-darker;
                             background-color: white;
                             transform: scale(1.1);
                             transition: 750ms;
@@ -103,23 +112,21 @@
             }
         }
     }
-
     .more {
         display: flex;
         justify-content: center;
         align-items: center;
-        border: solid 3px $purple-dark;
+        border: solid 5px $primary-darker;
         border-radius: 15px;
         width: 150px;
         height: 45px;
-        margin: 0 auto 20px auto;
-        background-color: $purple-dark;
+        margin: 200px auto 10px auto;
+        background-color: $primary-darker;
         color: white;
         font-weight: 600;
         transition: 750ms;
-
         &:hover {
-            color: $purple-dark;
+            color: $primary-dark;
             background-color: white;
             transform: scale(1.05);
             transition: 750ms;

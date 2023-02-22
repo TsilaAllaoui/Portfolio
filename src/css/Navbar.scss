@@ -14,13 +14,13 @@
 
 .Navbar
 {
+    z-index: 5;
     position: sticky;
     top: 0;
     display: flex;
-    background-color: $dark;
+    background-color: $primary-darker;
     font-family: "Galano Grotesque Bold";
     align-items: baseline;
-    // border-bottom: white solid 2px;
     height: 85px;
 
     #me{
@@ -45,7 +45,7 @@
             align-items: center;
             text-decoration: none;
             &:hover{
-                background-color: lighten($color: $dark, $amount: 15%);
+                background-color: $primary-dark;
                 border-bottom: white solid 3px;
                 transform: translateY(-3px);
                 transition: 400ms;
@@ -58,15 +58,15 @@
         height: 50px;
         width: 150px;
         margin-right: 5%;
-        background-color: $dark;
+        background-color: $primary-darker;
         border-radius: 8px;
         border: white solid 3px;
         font-family: "Galano Grotesque Bold";
         color: white;
         transition: 750ms;
         &:hover{
-            color: $dark;
-            border: $dark solid 3px;
+            color: $primary-darker;
+            border: $primary-darker solid 3px;
             background-color: white;
             transform: scale(1.1);
             transition: 750ms;

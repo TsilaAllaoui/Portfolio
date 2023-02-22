@@ -37,7 +37,10 @@ function Project(props)
 function Projects()
 {
     return <div className="container">
-        <p>Projects</p>
+        <div className="separator">
+            <p>Projects</p>
+            <div className="hseparator"></div>
+        </div>
         <div class="Projects-container">
             {projects.map((item, index) => <Project name={item.name} desc={item.desc}/>)}
         </div>

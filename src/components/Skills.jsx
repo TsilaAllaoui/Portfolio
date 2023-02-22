@@ -23,7 +23,7 @@ function Skills() {
                     ["C++", "95"], 
                     ["Python", "50"], 
                     ["HTML", "60"], 
-                    ["CSS SCSS/", "40"],
+                    ["CSS/SCSS", "40"],
                     ["JS", "15"],
                     ["VBS", "25"],
                     ["AutoCAD/GstarCAD", "70"],
