@@ -359,6 +359,16 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@thednp/bezier-easing@^1.0.1":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@thednp/bezier-easing/-/bezier-easing-1.0.4.tgz#fd144862546fc701e7d79d42b79ddcb32931ac49"
+  integrity sha512-Pb5USFGQV6OKVrnZfs+A/JSLQ57rZ79FqXptctodarhlzS+ubcuT5+N3LYy2wnLonQau+QsNrZhfpzWZq+aFVw==
+
+"@thednp/shorty@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@thednp/shorty/-/shorty-1.0.3.tgz#65394e7420d2dd42d219f8da759a68f1a54564f0"
+  integrity sha512-PPaERUGmRpi2eWxYUV5yv/pvalPgPOjwKRmRqGMWGuV8xgkvxgtjKIiFJA2D2ei4l4Ih9mEBktDg6Z9+y+To9Q==
+
 "@types/prop-types@*":
   version "15.7.5"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
@@ -490,6 +500,11 @@ debug@^4.1.0:
   integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
   dependencies:
     ms "2.1.2"
+
+dommatrix@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/dommatrix/-/dommatrix-1.0.3.tgz#e7c18e8d6f3abdd1fef3dd4aa74c4d2e620a0525"
+  integrity sha512-l32Xp/TLgWb8ReqbVJAFIvXmY7go4nTxxlWiAFyhoQw9RKEOHBZNnyGvJWqDVSPmq3Y9HlM4npqF/T6VMOXhww==
 
 electron-to-chromium@^1.4.251:
   version "1.4.284"
@@ -631,6 +646,16 @@ json5@^2.2.2:
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
 
+kute.js@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/kute.js/-/kute.js-2.2.4.tgz#e1ac07f7c558c478143a971cd5bdb12eaa586c2c"
+  integrity sha512-M63qfJplLT/1+qeRdFtHimC0D4fqUyRqHJcsnWWTY9s+isB6TsNNx/oSR2XzMm4CsY9Rvqurd+xUYSyJggmhbQ==
+  dependencies:
+    "@thednp/bezier-easing" "^1.0.1"
+    "@thednp/shorty" "^1.0.3"
+    minifill "^0.0.17"
+    svg-path-commander "1.0.5"
+
 loose-envify@^1.1.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
@@ -651,6 +676,11 @@ magic-string@^0.27.0:
   integrity sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.4.13"
+
+minifill@^0.0.17:
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/minifill/-/minifill-0.0.17.tgz#8e5fab670e07f14ec67b2459735bb1fbfc48f2b0"
+  integrity sha512-tV56LFXsi8vjH4tUExtlu8aPKKQw/U/mn4OIrDU9x30H+9sP8/dWFbXzkAPmcH6o+9fho98kyafnk4VgQViYQQ==
 
 ms@2.1.2:
   version "2.1.2"
@@ -703,6 +733,11 @@ react-dom@^18.2.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
+
+react-icons@^4.10.1:
+  version "4.10.1"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.10.1.tgz#3f3b5eec1f63c1796f6a26174a1091ca6437a500"
+  integrity sha512-/ngzDP/77tlCfqthiiGNZeYFACw85fUjZtLbedmJ5DTlNDIwETxhwBzdOJ21zj4iJdvc0J3y7yOsX3PpxAJzrw==
 
 react-refresh@^0.14.0:
   version "0.14.0"
@@ -776,6 +811,13 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+
+svg-path-commander@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/svg-path-commander/-/svg-path-commander-1.0.5.tgz#99590f05795364af201ed9e29ad1b5b748c44629"
+  integrity sha512-hhQfARVXoPrwwe4DNPWM4hjQLK7rTxwQ+TUc5mxoe5g0k5eStc4SPnKqmivlm/dzZ98bI+yDyKye92n2t+oOiQ==
+  dependencies:
+    dommatrix "^1.0.3"
 
 to-fast-properties@^2.0.0:
   version "2.0.0"
