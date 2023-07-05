@@ -1,3 +1,4 @@
+import React from "react";
 import Wave from "react-wavify";
 import "../styles/Waves.scss";
 
