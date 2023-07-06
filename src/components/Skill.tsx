@@ -1,25 +1,25 @@
 import SkillModel from "../models/skill";
 import "../styles/Skill.scss";
+import { PieChart } from 'react-minimal-pie-chart';
 
 function Skill({ skill }: { skill: SkillModel }) {
   return (
     <div id="skill-container">
-      <div
-        id="skill"
-        style={{
-          background: `radial-gradient(closest-side, #151315 79%, transparent 80% 100%), conic-gradient(transparent ${
-            100 - skill.perf
-          }%, #3a2e73 ${100 - skill.perf}%)`,
-        }}
-      >
-        <progress
-          value={50}
-          max={100}
-          style={{ visibility: "hidden", height: "0", width: "0" }}
-        >
-          50%
-        </progress>
-        <p>{skill.perf}%</p>
+      <div className="pie">
+        <PieChart
+          className="chart"
+          data={[{ value: skill.perf - 5, color: "url(#gradient-1)" }]}
+          totalValue={100}
+          lineWidth={25}
+          children={
+            <linearGradient id="gradient-1">
+              <stop offset="25%" stopColor="#740824" />
+              <stop offset="75%" stopColor="#4B0C6F" />
+            </linearGradient>
+          }
+          rounded={true}
+        />
+        <p className="perf">{skill.perf}%</p>
       </div>
       <p>{skill.tech}</p>
     </div>
