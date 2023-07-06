@@ -1,23 +1,10 @@
 import "../styles/Bio.scss";
 import { Typewriter } from "react-simple-typewriter";
 import profilePic from "../assets/profile-pic.svg";
-import Particles from "react-tsparticles";
-
-import { Engine, tsParticles } from "tsparticles-engine";
-import { loadLinksPreset } from "tsparticles-preset-links";
 
 function Bio() {
-  let engine = async () => await loadLinksPreset(tsParticles);
-
   return (
     <div id="bio">
-      <Particles
-        options={{
-          preset: "links",
-        }}
-        init={engine}
-        id="particles"
-      />
       <div id="desc">
         <p id="welcome">Welcome to my portfolio.</p>
         <div id="presentation">

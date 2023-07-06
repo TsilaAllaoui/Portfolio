@@ -16,6 +16,9 @@
   }
 
   #nav-buttons {
+    display: flex;
+    align-items: center;
+
     &::before {
       content: "";
       width: 16rem;
@@ -34,6 +37,8 @@
       font-weight: bold;
       height: 100%;
       border-bottom: solid 3px transparent;
+      display: grid;
+      place-items: center;
 
       &:hover {
         opacity: 100% !important;

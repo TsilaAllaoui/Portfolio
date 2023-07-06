@@ -1,0 +1,21 @@
+#skills-container {
+  height: 100%;
+  display: grid;
+  place-items: center;
+
+  #skills {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75%;
+    width: 75%;
+    background-color: #151315;
+    border-radius: 5rem 5rem 0 0;
+
+    #skills-list {
+      margin-top: 5rem;
+      display: flex;
+    }
+  }
+}
