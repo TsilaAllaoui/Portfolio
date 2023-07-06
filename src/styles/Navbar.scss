@@ -34,7 +34,7 @@
       font-weight: bold;
       height: 100%;
       border-bottom: solid 3px transparent;
-      
+
       &:hover {
         opacity: 100% !important;
         border-bottom: solid 3px white;
@@ -62,14 +62,12 @@
         padding: 0.5rem;
         transition: box-shadow 250ms;
         box-shadow: 0 0 1px 1px transparent;
-        
+
         &:hover {
-          // transform: scale(1.1);
           box-shadow: 0 0 1px 1px white;
         }
       }
     }
-
 
     #hire-button {
       border: solid white 1px;
