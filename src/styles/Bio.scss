@@ -1,0 +1,38 @@
+#bio {
+  display: flex;
+
+  #particles {
+    z-index: -5;
+    opacity: 0.2;
+  }
+
+  #profile-pic {
+    width: 640px;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+
+  #desc {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 5rem 0 0 10%;
+
+    #welcome {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    #presentation {
+      font-size: 3rem;
+      margin: 0;
+      display: flex;
+
+      #name {
+        margin-left: 1rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

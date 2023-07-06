@@ -1,4 +1,3 @@
-import React from "react";
 import Wave from "react-wavify";
 import "../styles/Waves.scss";
 
@@ -10,8 +9,8 @@ function Waves() {
         fill="url(#gradient-1)"
         paused={false}
         options={{
-          height: 20,
-          amplitude: 100,
+          height: 80,
+          amplitude: 46,
           speed: 0.1,
           points: 3,
         }}
@@ -29,7 +28,7 @@ function Waves() {
         paused={false}
         options={{
           height: 90,
-          amplitude: 50,
+          amplitude: 36,
           speed: 0.15,
           points: 4,
         }}
