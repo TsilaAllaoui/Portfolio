@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 function Navbar() {
-  const [activeNavBar, setActiveNavBar] = useState("home");
+  const [activeNavBar, setActiveNavBar] = useState(
+    window.location.pathname.replace("/", "")
+  );
 
   useEffect(() => {
     const navButtons: NodeListOf<HTMLButtonElement> =
@@ -25,15 +27,30 @@ function Navbar() {
     <div id="navbar">
       <p id="logo"></p>
       <div id="nav-buttons">
-        <Link className="nav-button" to={"/"}>
+        <Link
+          id="home"
+          className="nav-button"
+          to={"/"}
+          onClick={() => setActiveNavBar("home")}
+        >
           Home
         </Link>
-        <Link className="nav-button" to={"skills"}>
+        <Link
+          id="skills"
+          className="nav-button"
+          to={"skills"}
+          onClick={() => setActiveNavBar("skills")}
+        >
           Skills
         </Link>
-        <button className="nav-button" id="projects">
-          <a href="">Projects</a>
-        </button>
+        <Link
+          id="projects"
+          className="nav-button"
+          to={"projects"}
+          onClick={() => setActiveNavBar("projects")}
+        >
+          Projects
+        </Link>
       </div>
       <div id="social">
         <div id="icons">

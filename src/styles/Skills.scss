@@ -12,46 +12,71 @@
     width: 50%;
     background-color: #151315;
     border-radius: 5rem;
+    position: relative;
 
     #skills-list {
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 2rem;
-      position: relative;
+      gap: 3rem;
       transition: 1500ms;
 
       .skill-item {
         animation: fade 1000ms linear;
       }
 
+      #skill-items {
+        display: flex;
+      }
+
       .prev-container {
         color: white;
-        height: 1.75rem;
-        width: 1.75rem;
+        height: 2.25rem;
+        width: 2.25rem;
         background-color: black;
         border-radius: 100%;
         opacity: 0.5;
         display: grid;
         place-items: center;
         position: absolute;
-        left: 2%;
+        left: 15%;
         z-index: 1;
       }
 
       .next-container {
         color: white;
-        height: 1.75rem;
-        width: 1.75rem;
+        height: 2.25rem;
+        width: 2.25rem;
         background-color: black;
         border-radius: 100%;
         opacity: 0.5;
         display: grid;
         place-items: center;
         position: absolute;
-        right: 2%;
+        right: 15%;
         z-index: 1;
+      }
+    }
+
+    #indicators {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin-bottom: 2rem;
+      place-content: center;
+      //   height: 100%;
+      width: 100%;
+
+      //   z-index: 400;
+
+      .indicator {
+        height: 0.3rem;
+        width: 0.3rem;
+        background-color: white;
+        border-radius: 5px;
+        margin: 0.1rem;
+        transition: width 250ms linear;
       }
     }
   }

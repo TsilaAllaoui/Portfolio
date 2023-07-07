@@ -1,10 +1,17 @@
+import { useEffect, useRef } from "react";
 import SkillModel from "../models/skill";
 import "../styles/Skill.scss";
 import { PieChart } from "react-minimal-pie-chart";
 
 function Skill({ skill }: { skill: SkillModel }) {
+  const item = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    item.current!.style.animation = "fade 1500ms linear";
+  }, []);
+
   return (
-    <div id="skill-container">
+    <div ref={item} id="skill-container">
       <div className="pie">
         <PieChart
           className="chart"

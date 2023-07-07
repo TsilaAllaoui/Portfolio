@@ -7,6 +7,7 @@ import { Outlet, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Skills from "./Skills";
 import Layout from "./Layout";
+import Projects from "./Projects";
 
 let first = true;
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="skills" element={<Skills />} />
+          <Route path="projects" element={<Projects />} />
         </Route>
       </Routes>
     </div>
