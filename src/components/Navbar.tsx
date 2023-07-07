@@ -1,7 +1,7 @@
 import "../styles/Navbar.scss";
 import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function Navbar() {
   const [activeNavBar, setActiveNavBar] = useState("home");

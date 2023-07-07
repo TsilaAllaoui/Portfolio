@@ -3,22 +3,24 @@ import Navbar from "./Navbar";
 import Particles from "react-tsparticles";
 import { loadLinksPreset } from "tsparticles-preset-links";
 import { tsParticles } from "tsparticles-engine";
-import { Outlet } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
+import Home from "./Home";
+import Skills from "./Skills";
+import Layout from "./Layout";
+
+let first = true;
 
 function App() {
   let engine = async () => await loadLinksPreset(tsParticles);
 
   return (
     <div className="app">
-      <Particles
-        options={{
-          preset: "links",
-        }}
-        init={engine}
-        id="particles"
-      />
-      <Navbar />
-      <Outlet />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="skills" element={<Skills />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
