@@ -5,6 +5,24 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 import { useEffect, useState } from "react";
 import { TransitionGroup } from "react-transition-group";
+import arduino from "../assets/arduino-original.svg";
+import bash from "../assets/bash-plain.svg";
+import bootstrap from "../assets/bootstrap-original.svg";
+import c from "../assets/c-original.svg";
+import cpp from "../assets/cplusplus-original.svg";
+import cmake from "../assets/cmake-original.svg";
+import css from "../assets/css3-plain-wordmark.svg";
+import flutter from "../assets/flutter-original.svg";
+import html from "../assets/html5-original.svg";
+import js from "../assets/javascript-original.svg";
+import linux from "../assets/linux-original.svg";
+import nodejs from "../assets/nodejs-original.svg";
+import python from "../assets/python-original.svg";
+import raspberry from "../assets/raspberrypi-original.svg";
+import react from "../assets/react-original.svg";
+import sdl from "../assets/sdl-original.svg";
+import ts from "../assets/typescript-original.svg";
+import vs from "../assets/visualstudio-plain.svg";
 
 function Skills() {
   const skills: SkillModel[] = [
@@ -24,12 +42,27 @@ function Skills() {
 
   const nextSkills = () => {
     if (skills.slice(index + 3, index + 6).length == 0) return;
+
+    const indicators: NodeListOf<HTMLDivElement> =
+      document.querySelectorAll(".skill-item");
+    indicators.forEach((item) => {
+      item.style.animation = "fade-out-right 500ms linear";
+    });
+
     setIndex((index) => index + 3);
     setActiveSkills(skills.slice(index + 3, index + 6));
+    // setTimeout(() => {}, 500);
   };
 
   const prevSkills = () => {
     if (skills.slice(index - 3, index).length == 0) return;
+
+    const indicators: NodeListOf<HTMLDivElement> =
+      document.querySelectorAll(".skill-item");
+    indicators.forEach((item) => {
+      item.style.animation = "fade-out-left 500ms linear";
+    });
+
     setIndex((index) => index - 3);
     setActiveSkills(skills.slice(index - 3, index));
   };
@@ -68,6 +101,29 @@ function Skills() {
           {Array.from(Array(Math.floor(skills.length / 3) + 1), (e, i) => {
             return <div className="indicator" key={i}></div>;
           })}
+        </div>
+      </div>
+      <div id="other-skills-container">
+        <p>Others</p>
+        <div id="other-skills">
+          <img src={c} title="c" alt="c" />
+          <img src={cpp} title="cplusplus" alt="cplusplus" />
+          <img src={flutter} title="Flutter" alt="Flutter" />
+          <img src={css} title="CSS3" alt="CSS" />
+          <img src={html} title="HTML5" alt="HTML" />
+          <img src={js} title="JavaScript" alt="JavaScript" />
+          <img src={ts} title="TypeScript" alt="TypeScript" />
+          <img src={react} title="React" alt="React" />
+          <img src={nodejs} title="Nodejs" alt="Nodejs" />
+          <img src={bootstrap} title="Bootstrap" alt="Bootstrap" />
+          <img src={arduino} title="Arduino" alt="Arduino" />
+          <img src={raspberry} title="RaspberryPi" alt="RaspberryPi" />
+          <img src={bash} title="Bash" alt="Bash" />
+          <img src={cmake} title="Cmake" alt="Cmake" />
+          <img src={linux} title="Linux" alt="Linux" />
+          <img src={sdl} title="SDL" alt="SDL" />
+          <img src={python} title="Python" alt="Python" />
+          <img src={vs} title="Visualstudio" alt="Visualstudio" />
         </div>
       </div>
     </div>

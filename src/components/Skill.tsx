@@ -7,7 +7,7 @@ function Skill({ skill }: { skill: SkillModel }) {
   const item = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    item.current!.style.animation = "fade 1500ms linear";
+    item.current!.style.animation = "fade-in 1500ms linear";
   }, []);
 
   return (
