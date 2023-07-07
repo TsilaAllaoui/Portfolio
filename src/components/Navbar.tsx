@@ -1,6 +1,7 @@
 import "../styles/Navbar.scss";
 import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [activeNavBar, setActiveNavBar] = useState("home");
@@ -24,12 +25,12 @@ function Navbar() {
     <div id="navbar">
       <p id="logo"></p>
       <div id="nav-buttons">
-        <button className="nav-button" id="home">
-          <a href="#">Home</a>
-        </button>
-        <button className="nav-button" id="skills">
-          <a href="#">Skills</a>
-        </button>
+        <Link className="nav-button" to={"/"}>
+          Home
+        </Link>
+        <Link className="nav-button" to={"skills"}>
+          Skills
+        </Link>
         <button className="nav-button" id="projects">
           <a href="">Projects</a>
         </button>
