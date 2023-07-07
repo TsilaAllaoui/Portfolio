@@ -1,7 +1,9 @@
 import "../styles/Skills.scss";
 import Skill from "./Skill";
 import SkillModel from "../models/skill.js";
-import { GrPrevious, GrNext } from "react-icons/gr";
+import { FcPrevious, FcNext } from "react-icons/fc";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
 import { useState } from "react";
 
 function Skills() {
@@ -14,19 +16,19 @@ function Skills() {
     { tech: "Embedded Technologies", perf: 95 },
   ];
 
-  const [activeSkills, setActiveSkills] = useState<SkillModel[]>([...skills.slice(0, 3)]);
+  const [activeSkills, setActiveSkills] = useState<SkillModel[]>([
+    ...skills.slice(0, 3),
+  ]);
   const [index, setIndex] = useState(0);
 
   const nextSkills = () => {
-    if (index > skills.length - 3)
-      return;
+    if (index > skills.length - 3) return;
     setIndex((index) => index + 1);
     setActiveSkills(skills.slice(index, index + 3));
   };
 
   const prevSkills = () => {
-    if (index <= 1)
-      return;
+    if (index <= 1) return;
     setIndex((index) => index - 1);
     setActiveSkills(skills.slice(index, index + 3));
   };
@@ -36,12 +38,14 @@ function Skills() {
       <div id="skills">
         <h1>Skills</h1>
         <div id="skills-list">
-          <div onClick={prevSkills}>
-            <GrPrevious id="prev" />
+          <div className="prev-container" onClick={prevSkills}>
+            <IoIosArrowBack id="prev" />
           </div>
-          {activeSkills.map((skill: SkillModel, index) => <Skill skill={skill} key={skill.tech} />)}
-          <div onClick={nextSkills}>
-            <GrNext id="next" />
+          {activeSkills.map((skill: SkillModel, index) => (
+            <Skill skill={skill} key={skill.tech} />
+          ))}
+          <div className="next-container" onClick={nextSkills}>
+            <IoIosArrowForward id="next" />
           </div>
         </div>
       </div>

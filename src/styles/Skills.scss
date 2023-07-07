@@ -8,21 +8,46 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50%;
+    height: 75%;
     width: 50%;
     background-color: #151315;
     border-radius: 5rem;
 
     #skills-list {
-      margin-top: 2rem;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 2rem;
+      position: relative;
+      transition: 1500ms;
 
-      #next,
-      #prev {
-        fill: currentColor;
-        transform: scale(2);
+      .prev-container {
+        color: white;
+        height: 1.75rem;
+        width: 1.75rem;
+        background-color: black;
+        border-radius: 100%;
+        opacity: 0.5;
+        display: grid;
+        place-items: center;
+        position: absolute;
+        left: 2%;
+        z-index: 1;
+      }
+
+      .next-container {
+        color: white;
+        height: 1.75rem;
+        width: 1.75rem;
+        background-color: black;
+        border-radius: 100%;
+        opacity: 0.5;
+        display: grid;
+        place-items: center;
+        position: absolute;
+        right: 2%;
+        z-index: 1;
       }
     }
   }

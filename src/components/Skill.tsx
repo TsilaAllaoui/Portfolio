@@ -1,6 +1,6 @@
 import SkillModel from "../models/skill";
 import "../styles/Skill.scss";
-import { PieChart } from 'react-minimal-pie-chart';
+import { PieChart } from "react-minimal-pie-chart";
 
 function Skill({ skill }: { skill: SkillModel }) {
   return (
@@ -18,10 +18,12 @@ function Skill({ skill }: { skill: SkillModel }) {
             </linearGradient>
           }
           rounded={true}
+          animate={true}
+          animationDuration={1500}
         />
         <p className="perf">{skill.perf}%</p>
       </div>
-      <p>{skill.tech}</p>
+      <p className="tech">{skill.tech}</p>
     </div>
   );
 }
