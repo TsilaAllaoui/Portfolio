@@ -42,7 +42,9 @@ function Skills() {
             <IoIosArrowBack id="prev" />
           </div>
           {activeSkills.map((skill: SkillModel, index) => (
-            <Skill skill={skill} key={skill.tech} />
+            <div className="skill-item" key={skill.tech}>
+              <Skill skill={skill} />
+            </div>
           ))}
           <div className="next-container" onClick={nextSkills}>
             <IoIosArrowForward id="next" />

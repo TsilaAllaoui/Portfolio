@@ -22,6 +22,10 @@
       position: relative;
       transition: 1500ms;
 
+      .skill-item {
+        animation: fade 1000ms linear;
+      }
+
       .prev-container {
         color: white;
         height: 1.75rem;
