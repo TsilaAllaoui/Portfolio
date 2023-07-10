@@ -4,6 +4,7 @@ interface ProjectModel {
   image: string;
   link: string;
   scrollDireciton: string;
+  screenshots: string[];
 }
 
 export default ProjectModel;

@@ -2,7 +2,13 @@ import { MouseEventHandler } from "react";
 import ProjectModel from "../models/project";
 import "../styles/Project.scss";
 
-function Project({ project }: { project: ProjectModel }) {
+function Project({
+  project,
+  setPreviewItem,
+}: {
+  project: ProjectModel;
+  setPreviewItem: (name: string) => void;
+}) {
   const fontSize = project.desc.length > 40 ? 0.75 : 1;
 
   const move = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -30,7 +36,14 @@ function Project({ project }: { project: ProjectModel }) {
       >
         <div id="buttons">
           <a href="#">
-            <button id="preview">Preview</button>
+            <button
+              id="preview"
+              onClick={() => {
+                setPreviewItem(project.name);
+              }}
+            >
+              Preview
+            </button>
           </a>
           <a href={project.link}>
             <button id="more">More</button>

@@ -4,43 +4,76 @@ import Project from "./Project";
 import ProjectModel from "../models/project";
 import { useEffect, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import Preview from "./Preview";
 
 function Projects() {
   const projects: ProjectModel[] = [
     {
       name: "GasyBoy",
       desc: "Gameboy emulator written with C++ / SDL2",
-      image: "./projects-bg/GasyBoy.png",
+      image: "./projects-bg/GasyBoy/GasyBoy.png",
       link: "https://github.com/TsilaAllaoui/GasyBoy",
       scrollDireciton: "vertical",
+      screenshots: [
+        "./projects-bg/GasyBoy/dr_mario_1.png",
+        "./projects-bg/GasyBoy/dr_mario_2.png",
+        "./projects-bg/GasyBoy/mario_land_1.png",
+        "./projects-bg/GasyBoy/mario_land_2.png",
+        "./projects-bg/GasyBoy/nintendo_screen.png",
+        "./projects-bg/GasyBoy/tetris_1.png",
+        "./projects-bg/GasyBoy/tetris_2.png",
+      ],
     },
     {
       name: " Akaonty-iT",
       desc: "Expense and Debt/Loan Management Android App",
-      image: "./projects-bg/Akaonty-iT.jpg",
+      image: "./projects-bg/Akaonty-iT/Akaonty-iT.jpg",
       link: "https://github.com/TsilaAllaoui/Akaonty-iT",
       scrollDireciton: "vertical",
+      screenshots: [
+        "./projects-bg/Akaonty-iT/1.jpg",
+        "./projects-bg/Akaonty-iT/2.jpg",
+        "./projects-bg/Akaonty-iT/3.jpg",
+        "./projects-bg/Akaonty-iT/4.jpg",
+        "./projects-bg/Akaonty-iT/5.jpg",
+        "./projects-bg/Akaonty-iT/6.jpg",
+        "./projects-bg/Akaonty-iT/7.jpg",
+        "./projects-bg/Akaonty-iT/8.jpg",
+        "./projects-bg/Akaonty-iT/9.jpg",
+        "./projects-bg/Akaonty-iT/10.jpg",
+        "./projects-bg/Akaonty-iT/11.jpg",
+      ],
     },
     {
       name: "Nintendo-Switch-HomeMenu",
       desc: "A recreation of the Nintendo Switch Home menu in ReactJS/Tauri",
-      image: "./projects-bg/Nintendo-Switch-HomeMenu.png",
+      image:
+        "./projects-bg/Nintendo-Switch-HomeMenu/Nintendo-Switch-HomeMenu.png",
       link: "https://github.com/TsilaAllaoui/Nintendo-Switch-HomeMenu---React-Tauri",
       scrollDireciton: "horizontal",
+      screenshots: [
+        "./projects-bg/Nintendo-Switch-HomeMenu/Nintendo-Switch-HomeMenu.png",
+      ],
     },
     {
       name: "ChitChat",
       desc: "Chat app made with ReactJS and FireBase",
-      image: "./projects-bg/ChitChat.png",
+      image: "./projects-bg/ChitChat/ChitChat.png",
       link: "https://github.com/TsilaAllaoui/ChitChat",
       scrollDireciton: "horizontal",
+      screenshots: [
+        "./projects-bg/ChitChat/ChitChat.png",
+        "./projects-bg/ChitChat/main.png",
+        "./projects-bg/ChitChat/message.png",
+      ],
     },
     {
       name: "MazeRunner",
       desc: "Maze Runner with BFS and Randomized Prim's Algorithm for maze the generation",
-      image: "./projects-bg/MazeRunner.png",
+      image: "./projects-bg/MazeRunner/MazeRunner.png",
       link: "https://github.com/TsilaAllaoui/MazeRunner",
       scrollDireciton: "vertical",
+      screenshots: ["./projects-bg/MazeRunner/capture.gif"],
     },
     {
       name: "RustyChip8",
@@ -48,11 +81,14 @@ function Projects() {
       image: "./projects-bg/placeholder.png",
       link: "https://github.com/TsilaAllaoui/RustyChip8",
       scrollDireciton: "vertical",
+      screenshots: ["./projects-bg/placeholder.png"],
     },
   ];
 
   const [index, setIndex] = useState(0);
   const [activeProjects, setActiveProjects] = useState(projects.slice(0, 3));
+  const [currentPrieviewItem, setCurrentPrieviewItem] = useState("");
+  const [previews, setPreviews] = useState<string[]>([]);
 
   useEffect(() => {
     setActiveProjects(projects.slice(index, index + 3));
@@ -62,6 +98,19 @@ function Projects() {
       item.style.width = index / 3 == i ? "0.5rem" : "0.3rem";
     });
   }, [index]);
+
+  useEffect(() => {
+    if (currentPrieviewItem == "") {
+      setPreviews([]);
+    }
+    for (let i = 0; i < projects.length; i++) {
+      const project = projects[i];
+      if (project.name == currentPrieviewItem) {
+        setPreviews(project.screenshots);
+        break;
+      }
+    }
+  }, [currentPrieviewItem]);
 
   const updateIndex = (
     event: React.MouseEvent<SVGElement>,
@@ -91,7 +140,11 @@ function Projects() {
           />
         </div>
         {activeProjects.map((project) => (
-          <Project project={project} key={project.name} />
+          <Project
+            project={project}
+            setPreviewItem={setCurrentPrieviewItem}
+            key={project.name}
+          />
         ))}
         <div id="next-container">
           <IoIosArrowForward
@@ -109,6 +162,12 @@ function Projects() {
           return <div className="indicator" key={i}></div>;
         })}
       </div>
+      {previews.length > 0 ? (
+        <Preview
+          previews={previews}
+          setCurrentPrieviewItem={setCurrentPrieviewItem}
+        />
+      ) : null}
     </div>
   );
 }
