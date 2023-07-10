@@ -56,6 +56,11 @@ function Projects() {
 
   useEffect(() => {
     setActiveProjects(projects.slice(index, index + 3));
+    const indicators: NodeListOf<HTMLDivElement> =
+      document.querySelectorAll(".indicator");
+    indicators.forEach((item, i) => {
+      item.style.width = index / 3 == i ? "0.5rem" : "0.3rem";
+    });
   }, [index]);
 
   const updateIndex = (
@@ -98,6 +103,11 @@ function Projects() {
             onClick={(e) => updateIndex(e, "right")}
           />
         </div>
+      </div>
+      <div id="indicators">
+        {Array.from(Array(Math.floor(projects.length / 3)), (e, i) => {
+          return <div className="indicator" key={i}></div>;
+        })}
       </div>
     </div>
   );

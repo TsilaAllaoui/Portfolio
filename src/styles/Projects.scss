@@ -52,4 +52,22 @@
       width: 3rem;
     }
   }
+
+  #indicators {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 1.5rem;
+    place-content: center;
+    width: 100%;
+
+    .indicator {
+      height: 0.3rem;
+      width: 0.3rem;
+      background-color: white;
+      border-radius: 5px;
+      margin: 0.1rem;
+      transition: width 250ms linear;
+    }
+  }
 }

@@ -68,7 +68,6 @@ function Skills() {
   };
 
   useEffect(() => {
-    console.log((index % 3) + ":" + index / 3);
     const indicators: NodeListOf<HTMLDivElement> =
       document.querySelectorAll(".indicator");
     indicators.forEach((item, i) => {
