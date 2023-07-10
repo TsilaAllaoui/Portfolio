@@ -13,6 +13,10 @@ function Navbar() {
       document.querySelectorAll(".nav-button");
 
     navButtons.forEach((button) => {
+      if (activeNavBar == "" && button.id == "home") {
+        button.style.opacity = "1";
+        return;
+      }
       if (button.id == activeNavBar) {
         button.style.opacity = "1";
       } else button.style.opacity = "0.5";

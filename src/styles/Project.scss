@@ -1,0 +1,99 @@
+@keyframes move-vertically {
+  from {
+    background-position-y: 0;
+  }
+  to {
+    background-position-y: 100%;
+  }
+}
+
+@keyframes move-horizontally {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 100%;
+  }
+}
+
+.project {
+  border: solid 1px white;
+  border-radius: 15px;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 5px 5px grey;
+  transition: transform 500ms;
+
+  * {
+    border-radius: 15px;
+  }
+
+  &:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 calc(5px + 0.5rem) calc(5px + 0.5rem)
+      rgba($color: grey, $alpha: 0.5);
+    z-index: 10;
+  }
+
+  #card-header {
+    margin: 0;
+    height: 25%;
+    width: 100%;
+    background-color: black;
+
+    #name {
+      font-weight: 900;
+      font-size: 1.5rem;
+      padding: 0 1rem;
+      margin: 1rem 0;
+    }
+
+    #desc {
+      padding: 0 1rem;
+    }
+  }
+
+  #card-footer {
+    height: 75%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    #buttons {
+      button {
+        background-color: #740824;
+        height: 2rem;
+        border-radius: 5px;
+        border: unset;
+        color: white;
+        margin: 0.5rem 0.5rem;
+        font-weight: bold;
+        transition: transform 500ms;
+      }
+
+      #preview {
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 1rem #740824;
+        }
+      }
+
+      #more {
+        background-color: #105e6a;
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 1rem #105e6a;
+        }
+      }
+    }
+  }
+}

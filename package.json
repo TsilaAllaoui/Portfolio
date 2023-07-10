@@ -22,6 +22,7 @@
     "react-transition-group": "^4.4.5",
     "react-tsparticles": "^2.10.1",
     "react-wavify": "^1.8.3",
+    "require-context": "^1.1.0",
     "sass": "^1.57.1",
     "tsparticles": "^2.10.1",
     "tsparticles-engine": "^2.10.1",

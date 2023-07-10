@@ -8,6 +8,7 @@ import Home from "./Home";
 import Skills from "./Skills";
 import Layout from "./Layout";
 import Projects from "./Projects";
+import ErrorPage from "./ErrorPage";
 
 let first = true;
 
@@ -21,6 +22,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="skills" element={<Skills />} />
           <Route path="projects" element={<Projects />} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
     </div>
