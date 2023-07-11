@@ -54,7 +54,9 @@ function Navbar() {
             </a>
           </div>
         </div>
-        <button id="hire-button">Hire me</button>
+        <Link to={"contact"}>
+          <button id="hire-button">Hire me</button>
+        </Link>
       </div>
     </div>
   );

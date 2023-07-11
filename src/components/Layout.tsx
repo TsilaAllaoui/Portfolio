@@ -20,6 +20,8 @@ function Layout() {
       navigate("/skills");
     } else if (location.pathname.replace("/", "") == "skills") {
       navigate("/projects");
+    } else if (location.pathname.replace("/", "") == "projects") {
+      navigate("/contact");
     }
   }
 
@@ -29,6 +31,8 @@ function Layout() {
       navigate("/");
     } else if (location.pathname.replace("/", "") == "projects") {
       navigate("/skills");
+    } else if (location.pathname.replace("/", "") == "contact") {
+      navigate("/projects");
     }
   }
 
@@ -44,7 +48,7 @@ function Layout() {
       <Navbar />
       <Outlet />
       <div id="arrows">
-        {location.pathname == "/projects" ? null : (
+        {location.pathname == "/contact" ? null : (
           <IoIosArrowDown
             id="down-arrow"
             onClick={updateRouteDown}
