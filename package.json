@@ -12,6 +12,7 @@
     "@types/react-transition-group": "^4.4.6",
     "easy-pie-chart": "^2.1.7",
     "kute.js": "^2.2.4",
+    "mailgo": "^0.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dust-effect": "^0.0.7",
