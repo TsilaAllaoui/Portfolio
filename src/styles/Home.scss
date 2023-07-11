@@ -9,4 +9,44 @@
 
 #home {
   animation: fade-in 1000ms ease-in;
+
+  #first-circle {
+    position: absolute;
+    border-radius: 100%;
+    background-color: red;
+    height: 15rem;
+    width: 15rem;
+    bottom: 0;
+    left: 7%;
+    z-index: 1;
+    opacity: 0.65;
+    animation: fade-in 1000ms ease-in-out,
+      wiggle 3000ms infinite linear alternate;
+  }
+  #second-circle {
+    position: absolute;
+    border-radius: 100%;
+    background-color: orange;
+    height: 25rem;
+    width: 25rem;
+    top: 15%;
+    right: -20%;
+    z-index: 1;
+    opacity: 0.65;
+    animation: fade-in 1000ms ease-in-out,
+      wiggle2 3000ms 500ms infinite linear alternate;
+  }
+  #third-circle {
+    position: absolute;
+    border-radius: 100%;
+    background-color: greenyellow;
+    height: 8rem;
+    width: 8rem;
+    top: 15%;
+    left: -2%;
+    z-index: 1;
+    opacity: 0.65;
+    animation: fade-in 1000ms ease-in-out,
+      wiggle2 3000ms 500ms infinite linear alternate;
+  }
 }
