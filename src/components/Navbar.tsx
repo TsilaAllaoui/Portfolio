@@ -1,76 +1,60 @@
 import "../styles/Navbar.scss";
 import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 function Navbar() {
-  const [activeNavBar, setActiveNavBar] = useState(
-    window.location.pathname.replace("/", "")
-  );
+  const location = useLocation();
 
   useEffect(() => {
+    console.log(location);
     const navButtons: NodeListOf<HTMLButtonElement> =
       document.querySelectorAll(".nav-button");
 
     navButtons.forEach((button) => {
-      if (activeNavBar == "" && button.id == "home") {
+      if (location.pathname.replace("/", "") == "" && button.id == "home") {
         button.style.opacity = "1";
         return;
       }
-      if (button.id == activeNavBar) {
+      if (location.pathname.replace("/", "") == button.id) {
         button.style.opacity = "1";
       } else button.style.opacity = "0.5";
     });
-  }, [activeNavBar]);
-
-  const goToContact = () => {
-    location.href = "#";
-  };
+  }, [location]);
 
   return (
     <div id="navbar">
       <p id="logo"></p>
       <div id="nav-buttons">
-        <Link
-          id="home"
-          className="nav-button"
-          to={"/"}
-          onClick={() => setActiveNavBar("home")}
-        >
+        <Link id="home" className="nav-button" to={"/"}>
           Home
         </Link>
-        <Link
-          id="skills"
-          className="nav-button"
-          to={"skills"}
-          onClick={() => setActiveNavBar("skills")}
-        >
+        <Link id="skills" className="nav-button" to={"skills"}>
           Skills
         </Link>
-        <Link
-          id="projects"
-          className="nav-button"
-          to={"projects"}
-          onClick={() => setActiveNavBar("projects")}
-        >
+        <Link id="projects" className="nav-button" to={"projects"}>
           Projects
         </Link>
       </div>
       <div id="social">
         <div id="icons">
-          <a href="https://www.facebook.com/tsilavomaminiaina.rasoloallaoui">
-            <FaFacebookF className="social-icon" />
-          </a>
-          <a href="https://www.linkedin.com/in/rasolo-allaoui-tsilavo-maminiaina-manatombo-948634201">
-            <FaLinkedinIn className="social-icon" />
-          </a>
-          <a href="https://github.com/TsilaAllaoui">
-            <FaGithub className="social-icon" />
-          </a>
+          <div className="icon">
+            <a href="https://www.facebook.com/tsilavomaminiaina.rasoloallaoui">
+              <FaFacebookF />
+            </a>
+          </div>
+          <div className="icon">
+            <a href="https://www.linkedin.com/in/rasolo-allaoui-tsilavo-maminiaina-manatombo-948634201">
+              <FaLinkedinIn />
+            </a>
+          </div>
+          <div className="icon">
+            <a href="https://github.com/TsilaAllaoui">
+              <FaGithub />
+            </a>
+          </div>
         </div>
-        <button id="hire-button" onClick={goToContact}>
-          Hire me
-        </button>
+        <button id="hire-button">Hire me</button>
       </div>
     </div>
   );

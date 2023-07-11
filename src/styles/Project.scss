@@ -16,6 +16,35 @@
   }
 }
 
+@keyframes slide-up {
+  from {
+    transform: translateY(25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .project {
   border: solid 1px white;
   border-radius: 15px;
@@ -51,7 +80,7 @@
       font-weight: 900;
       font-size: 1.5rem;
       padding: 0 1rem;
-      margin: 1rem 0;
+      margin: 0.2rem 0 0.1rem 0;
     }
 
     #desc {
@@ -67,6 +96,7 @@
     align-items: flex-end;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 0 0 1rem 1rem;
 
     #buttons {
       button {
@@ -96,4 +126,8 @@
       }
     }
   }
+}
+
+#preview-container {
+  z-index: 1000;
 }

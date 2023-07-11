@@ -1,3 +1,23 @@
+@keyframes slide-down {
+  from {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 #navbar {
   height: 10vh;
   color: white;
@@ -5,6 +25,7 @@
   justify-content: space-around;
   align-items: center;
   margin-top: 2rem;
+  animation: hide 750ms ease-in-out, slide-down 1000ms 750ms ease-in-out;
 
   a {
     text-decoration: none;
@@ -57,16 +78,28 @@
     #icons {
       padding: 0 1rem;
       margin: 0 0.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-      .social-icon {
-        border: solid white 1px;
+      .icon {
         border-radius: 100%;
-        margin: 0 0.2rem;
-        height: 15px;
-        width: 15px;
-        padding: 0.5rem;
+        height: 1rem;
+        width: 1rem;
+        border: solid white 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         transition: box-shadow 250ms;
         box-shadow: 0 0 1px 1px transparent;
+        margin: 0 0.2rem;
+        padding: 0.5rem;
+
+        * {
+          height: 1rem;
+          width: 1rem;
+          margin-bottom: 0.3rem;
+        }
 
         &:hover {
           box-shadow: 0 0 1px 1px white;

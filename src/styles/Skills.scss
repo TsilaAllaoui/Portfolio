@@ -1,11 +1,9 @@
 @keyframes fade-out-right {
   from {
     opacity: 1;
-    // transform: rotate(0);
   }
   to {
     opacity: 0;
-    // transform: rotate(90deg);
   }
 }
 
@@ -20,10 +18,40 @@
   }
 }
 
+@keyframes slide-down {
+  from {
+    transform: translateY(-25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 #skills-container {
   height: 75%;
   display: grid;
   place-items: center;
+  animation: slide-down 1250ms ease-in-out;
 
   #skills {
     color: white;
@@ -101,6 +129,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    // animation: hide 1250ms ease-in-out, show 1250ms 1250ms ease-in-out;
 
     p {
       color: white;

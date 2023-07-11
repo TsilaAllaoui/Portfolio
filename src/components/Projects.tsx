@@ -5,6 +5,7 @@ import ProjectModel from "../models/project";
 import { useEffect, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Preview from "./Preview";
+import { FaGithub } from "react-icons/fa";
 
 function Projects() {
   const projects: ProjectModel[] = [
@@ -118,7 +119,7 @@ function Projects() {
   ) => {
     if (direction == "left" && index > 0) {
       setIndex((index) => index - 3);
-    } else if (direction == "right" && index < projects.length - 3) {
+    } else if (direction == "right" && index < projects.length) {
       setIndex((index) => index + 3);
     }
   };
@@ -126,7 +127,11 @@ function Projects() {
   return (
     <div id="projects-container">
       <div id="header">
-        <h3>Here are some of my projects. Feel free to test them. Enjoy!</h3>
+        <h3>
+          {index >= projects.length
+            ? "Want to see more projects? "
+            : "Here are some of my projects. Feel free to test them. Enjoy!"}
+        </h3>
       </div>
       <div className="projects">
         <div id="prev-container">
@@ -139,34 +144,45 @@ function Projects() {
             onClick={(e) => updateIndex(e, "left")}
           />
         </div>
-        {activeProjects.map((project) => (
+        {activeProjects.map((project, index) => (
           <Project
             project={project}
             setPreviewItem={setCurrentPrieviewItem}
             key={project.name}
+            index={index}
           />
         ))}
+        {index >= projects.length ? (
+          <div id="github">
+            <a href="https://github.com/TsilaAllaoui">
+              <FaGithub className="github-icon" />
+              <p>Go to github profile</p>
+            </a>
+          </div>
+        ) : null}
         <div id="next-container">
           <IoIosArrowForward
             id="next"
             style={{
               animation: "jiggle-left 1000ms infinite alternate",
-              opacity: index < projects.length - 3 ? "1" : "0",
+              opacity: index < projects.length ? "1" : "0",
             }}
             onClick={(e) => updateIndex(e, "right")}
           />
         </div>
       </div>
       <div id="indicators">
-        {Array.from(Array(Math.floor(projects.length / 3)), (e, i) => {
+        {Array.from(Array(Math.floor(projects.length / 3) + 1), (e, i) => {
           return <div className="indicator" key={i}></div>;
         })}
       </div>
       {previews.length > 0 ? (
-        <Preview
-          previews={previews}
-          setCurrentPrieviewItem={setCurrentPrieviewItem}
-        />
+        <div id="preview-container">
+          <Preview
+            previews={previews}
+            setCurrentPrieviewItem={setCurrentPrieviewItem}
+          />
+        </div>
       ) : null}
     </div>
   );

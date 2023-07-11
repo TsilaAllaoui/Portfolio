@@ -23,6 +23,7 @@ import react from "../assets/react-original.svg";
 import sdl from "../assets/sdl-original.svg";
 import ts from "../assets/typescript-original.svg";
 import vs from "../assets/visualstudio-plain.svg";
+import { element } from "prop-types";
 
 function Skills() {
   const skills: SkillModel[] = [
@@ -74,6 +75,19 @@ function Skills() {
       item.style.width = index / 3 == i ? "0.5rem" : "0.3rem";
     });
   }, [index]);
+
+  useEffect(() => {
+    const otherSkills: NodeListOf<HTMLImageElement> = document.querySelectorAll(
+      "#other-skills > img"
+    );
+    let delay = 0;
+    otherSkills.forEach((skill) => {
+      skill.style.animation = `hide ${
+        1250 + delay
+      }ms ease-in-out, show 1250ms ${1250 + delay}ms ease-in-out`;
+      delay += 75;
+    });
+  }, []);
 
   return (
     <div id="skills-container">

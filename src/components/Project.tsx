@@ -1,13 +1,15 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, useEffect, useRef } from "react";
 import ProjectModel from "../models/project";
 import "../styles/Project.scss";
 
 function Project({
   project,
   setPreviewItem,
+  index,
 }: {
   project: ProjectModel;
   setPreviewItem: (name: string) => void;
+  index: number;
 }) {
   const fontSize = project.desc.length > 40 ? 0.75 : 1;
 
@@ -22,8 +24,23 @@ function Project({
     e.currentTarget.style.animation = "";
   };
 
+  const updatePreview = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    setPreviewItem(project.name);
+  };
+
+  const projectRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let delay = 100 * index;
+    projectRef.current!.style.animation = `hide ${
+      500 + delay
+    }ms ease-in-out, show 1250ms ${500 + delay}ms  ease-in-out`;
+  }, []);
+
   return (
-    <div className="project">
+    <div ref={projectRef} className="project">
       <div id="card-header">
         <p id="name">{project.name}</p>
         <p id="desc">{project.desc}</p>
@@ -36,12 +53,7 @@ function Project({
       >
         <div id="buttons">
           <a href="#">
-            <button
-              id="preview"
-              onClick={() => {
-                setPreviewItem(project.name);
-              }}
-            >
+            <button id="preview" onClick={updatePreview}>
               Preview
             </button>
           </a>

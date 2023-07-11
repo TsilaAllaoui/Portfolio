@@ -16,12 +16,42 @@
   }
 }
 
+@keyframes slide-up {
+  from {
+    transform: translateY(25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 #projects-container {
-  height: 100%;
+  height: 75%;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: slide-up 750ms ease-in-out;
 
   #header {
     margin: 1rem 0;
@@ -50,6 +80,42 @@
     #next {
       height: 3rem;
       width: 3rem;
+    }
+
+    #github {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      a {
+        border-radius: 5px;
+        height: 2.5rem;
+        width: 15%;
+        background-color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        transition: transform 500ms;
+
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 3px 3px rgba($color: grey, $alpha: 0.5);
+        }
+
+        .github-icon {
+          width: 2rem;
+          height: 2rem;
+          color: black;
+          margin: 0 1rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+          color: black;
+          font-weight: bold;
+        }
+      }
     }
   }
 
