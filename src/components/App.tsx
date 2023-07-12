@@ -17,7 +17,7 @@ function App() {
   let engine = async () => await loadLinksPreset(tsParticles);
 
   return (
-    <div className="app">
+    <div className="app" style={{ color: "white" }}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

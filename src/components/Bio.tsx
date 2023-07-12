@@ -19,7 +19,7 @@ function Bio() {
             />
           </div>
         </div>
-        <p>
+        <p style={{ width: "75%" }}>
           My name is Tsila and I am a software developer. Passionate about new
           technologies but also a fanatic of old ones especially retro consoles.
           Spending most of my time doing electronics and coding.

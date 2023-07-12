@@ -17,7 +17,8 @@
     width: 640px;
     aspect-ratio: 1;
     object-fit: contain;
-    animation: scroll 1500ms ease-in-out;
+    animation: scroll 1500ms ease-in-out forwards;
+    transform: scale(0.8);
   }
 
   #desc {
@@ -49,18 +50,24 @@
 @media (max-width: 450px) {
   #bio {
     width: 75%;
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
     position: relative;
 
     #profile-pic {
       position: absolute;
-      top: 0;
-      left: 4.5rem;
+      top: 7rem;
+      left: 0.5rem;
       z-index: 1;
+      transform: scale(0.9);
     }
 
     #desc {
       width: 80%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
 
       #welcome {
         font-size: 1.15rem;
@@ -75,6 +82,28 @@
           font-weight: bold;
         }
       }
+    }
+  }
+}
+
+@keyframes scroll2 {
+  from {
+    transform: scale(1.75) translateX(25%);
+  }
+  to {
+    transform: scale(1.75) translateX(0);
+  }
+}
+
+@media (min-height: 916px) {
+  #bio {
+    #profile-pic {
+      top: 20rem;
+      left: 5rem;
+      position: absolute;
+      transform: scale(1.75);
+      animation: scroll2 1500ms linear forwards;
+      z-index: 1;
     }
   }
 }
