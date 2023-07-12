@@ -131,3 +131,29 @@
 #preview-container {
   z-index: 1000;
 }
+
+@media (max-width: 400px) {
+  .project {
+    width: 90%;
+    position: relative;
+    margin-bottom: 2rem;
+
+    #card-footer {
+      background-position: 50%;
+
+      #buttons {
+        width: 100%;
+        position: absolute;
+        bottom: -5rem;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        #more {
+          width: 4rem;
+        }
+      }
+    }
+  }
+}

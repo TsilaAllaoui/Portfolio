@@ -86,17 +86,23 @@ function Projects() {
     },
   ];
 
+  const sliceCount = window.screen.width > 400 ? 3 : 1;
+
   const [index, setIndex] = useState(0);
-  const [activeProjects, setActiveProjects] = useState(projects.slice(0, 3));
+  const [activeProjects, setActiveProjects] = useState(
+    projects.slice(0, sliceCount)
+  );
   const [currentPrieviewItem, setCurrentPrieviewItem] = useState("");
   const [previews, setPreviews] = useState<string[]>([]);
 
   useEffect(() => {
-    setActiveProjects(projects.slice(index, index + 3));
+    setActiveProjects(projects.slice(index, index + sliceCount));
     const indicators: NodeListOf<HTMLDivElement> =
       document.querySelectorAll(".indicator");
     indicators.forEach((item, i) => {
-      item.style.width = index / 3 == i ? "0.5rem" : "0.3rem";
+      item.style.width = index / sliceCount == i ? "0.75rem" : "0.3rem";
+      item.style.backgroundColor =
+        index / sliceCount == i ? "#740824" : "white";
     });
   }, [index]);
 
@@ -118,9 +124,9 @@ function Projects() {
     direction: string
   ) => {
     if (direction == "left" && index > 0) {
-      setIndex((index) => index - 3);
+      setIndex((index) => index - sliceCount);
     } else if (direction == "right" && index < projects.length) {
-      setIndex((index) => index + 3);
+      setIndex((index) => index + sliceCount);
     }
   };
 
@@ -172,9 +178,14 @@ function Projects() {
         </div>
       </div>
       <div id="indicators">
-        {Array.from(Array(Math.floor(projects.length / 3) + 1), (e, i) => {
-          return <div className="indicator" key={i}></div>;
-        })}
+        {Array.from(
+          Array(
+            Math.floor(projects.length / sliceCount) + (sliceCount == 1 ? 0 : 1)
+          ),
+          (e, i) => {
+            return <div className="indicator" key={i}></div>;
+          }
+        )}
       </div>
       {previews.length > 0 ? (
         <div id="preview-container">

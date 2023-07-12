@@ -137,3 +137,21 @@
     }
   }
 }
+
+@media (max-width: 400px) {
+  #projects-container {
+    margin-top: 3rem;
+    height: 100%;
+
+    #header {
+      h3 {
+        font-size: 0.8rem;
+      }
+    }
+
+    #prev-container,
+    #next-container {
+      width: 5%;
+    }
+  }
+}

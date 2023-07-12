@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/Preview.scss";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
 
 function Preview({
   previews,
@@ -19,10 +19,27 @@ function Preview({
 
   const [currentImage, setCurrentImage] = useState(previews[0]);
 
+  const updateThumbnail = (
+    e: React.MouseEvent<HTMLImageElement, MouseEvent>,
+    preview: string
+  ) => {
+    const images: NodeListOf<HTMLImageElement> =
+      document.querySelectorAll("#thumbnails > img");
+    images.forEach((image) => (image.style.border = "none"));
+    e.currentTarget.style.border = "solid 2px red";
+    setCurrentImage(preview);
+  };
+
+  useEffect(() => {
+    const images: NodeListOf<HTMLImageElement> =
+      document.querySelectorAll("#thumbnails > img");
+    images[0].style.border = "solid 2px red";
+  }, []);
+
   return (
     <div id="preview-container">
       <div id="close" onClick={closePreview}>
-        <AiOutlineCloseCircle />
+        <IoMdClose />
       </div>
       <div
         id="current"
@@ -30,11 +47,11 @@ function Preview({
       ></div>
       <div id="thumbnails">
         {previews.length > 0 &&
-          previews.map((preview) => (
+          previews.map((preview, index) => (
             <img
               src={preview}
               key={preview}
-              onClick={() => setCurrentImage(preview)}
+              onClick={(e) => updateThumbnail(e, preview)}
             />
           ))}
       </div>

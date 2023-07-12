@@ -47,7 +47,15 @@ function Project({
       </div>
       <div
         id="card-footer"
-        style={{ backgroundImage: `url(${project.image})` }}
+        style={{
+          backgroundImage: `url(${project.image})`,
+          animation:
+            window.screen.width <= 400
+              ? "move-" +
+                project.scrollDireciton +
+                "ly 15000ms linear infinite alternate"
+              : "",
+        }}
         onMouseEnter={move}
         onMouseLeave={removeAnimation}
       >
