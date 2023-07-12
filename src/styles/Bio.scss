@@ -11,6 +11,7 @@
 
 #bio {
   display: flex;
+  position: relative;
 
   #profile-pic {
     width: 640px;
@@ -40,6 +41,38 @@
       #name {
         margin-left: 1rem;
         font-weight: bold;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  #bio {
+    width: 75%;
+    display: block;
+    position: relative;
+
+    #profile-pic {
+      position: absolute;
+      top: 0;
+      z-index: 1;
+    }
+
+    #desc {
+      width: 80%;
+
+      #welcome {
+        font-size: 1.15rem;
+      }
+
+      #presentation {
+        font-size: 1.75rem;
+        margin: 0;
+
+        #name {
+          margin-left: 1rem;
+          font-weight: bold;
+        }
       }
     }
   }

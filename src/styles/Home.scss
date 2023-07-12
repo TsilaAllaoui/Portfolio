@@ -1,9 +1,42 @@
-@keyframes fade-in {
+@keyframes fade-in-circle {
   from {
     opacity: 0;
   }
   to {
-    opacity: 1;
+    opacity: 0.45;
+  }
+}
+
+@keyframes wiggle {
+  from {
+    transform: translateY(0);
+    transform: scale(0.5);
+  }
+  to {
+    transform: translateY(1rem);
+    transform: scale(1.75);
+  }
+}
+
+@keyframes wiggle2 {
+  from {
+    transform: translateY(0);
+    transform: scale(1);
+  }
+  to {
+    transform: translateY(2rem);
+    transform: scale(2.75);
+  }
+}
+
+@keyframes wiggle3 {
+  from {
+    transform: translateY(0);
+    transform: scale(0.75);
+  }
+  to {
+    transform: translateY(2rem);
+    transform: scale(1.75);
   }
 }
 
@@ -19,8 +52,8 @@
     bottom: 0;
     left: 7%;
     z-index: 1;
-    opacity: 0.65;
-    animation: fade-in 1000ms ease-in-out,
+    opacity: 0;
+    animation: fade-in-circle 3000ms 500ms linear forwards,
       wiggle 3000ms infinite linear alternate;
   }
   #second-circle {
@@ -33,7 +66,7 @@
     right: -20%;
     z-index: 1;
     opacity: 0.65;
-    animation: fade-in 1000ms ease-in-out,
+    animation: fade-in-circle 3000ms 500ms ease-in-out forwards,
       wiggle2 3000ms 500ms infinite linear alternate;
   }
   #third-circle {
@@ -46,7 +79,26 @@
     left: -2%;
     z-index: 1;
     opacity: 0.65;
-    animation: fade-in 1000ms ease-in-out,
-      wiggle2 3000ms 500ms infinite linear alternate;
+    animation: fade-in-circle 3000ms 500ms ease-in-out forwards,
+      wiggle3 3000ms 1000ms infinite linear alternate;
+  }
+
+  @media (max-width: 450px) {
+    #first-circle {
+      opacity: 0;
+    }
+    #third-circle {
+      width: 3rem;
+      height: 3rem;
+      top: 5rem;
+      opacity: 0;
+    }
+    #second-circle {
+      width: 15rem;
+      height: 15rem;
+      bottom: 0;
+      right: -50%;
+      opacity: 0;
+    }
   }
 }

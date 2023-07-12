@@ -1,7 +1,8 @@
 import "../styles/Navbar.scss";
 import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
+import { IoMenu } from "react-icons/io5";
 
 function Navbar() {
   const location = useLocation();
@@ -22,43 +23,63 @@ function Navbar() {
     });
   }, [location]);
 
+  const navbarRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const toggleMenu = (event: React.MouseEvent<HTMLDivElement>) => {
+    // navbarRef.current!.style.opacity =
+    //   navbarRef.current!.style.opacity == "0" ? "100%" : "0";
+    console.log(navbarRef.current!.style.transform);
+    navbarRef.current!.style.transform =
+      navbarRef.current!.style.transform == "translateX(0px)"
+        ? "translateX(-100%)"
+        : "translateX(0px)";
+    console.log(navbarRef.current!.style.transform);
+    menuRef.current!.style.opacity = "100%";
+  };
+
   return (
-    <div id="navbar">
-      <p id="logo"></p>
-      <div id="nav-buttons">
-        <Link id="home" className="nav-button" to={"/"}>
-          Home
-        </Link>
-        <Link id="skills" className="nav-button" to={"skills"}>
-          Skills
-        </Link>
-        <Link id="projects" className="nav-button" to={"projects"}>
-          Projects
-        </Link>
+    <>
+      <div id="menu" ref={menuRef} onClick={toggleMenu}>
+        <IoMenu />
       </div>
-      <div id="social">
-        <div id="icons">
-          <div className="icon">
-            <a href="https://www.facebook.com/tsilavomaminiaina.rasoloallaoui">
-              <FaFacebookF />
-            </a>
-          </div>
-          <div className="icon">
-            <a href="https://www.linkedin.com/in/rasolo-allaoui-tsilavo-maminiaina-manatombo-948634201">
-              <FaLinkedinIn />
-            </a>
-          </div>
-          <div className="icon">
-            <a href="https://github.com/TsilaAllaoui">
-              <FaGithub />
-            </a>
-          </div>
+      <div id="navbar" ref={navbarRef}>
+        <p id="logo"></p>
+        <div id="nav-buttons">
+          <Link id="home" className="nav-button" to={"/"}>
+            Home
+          </Link>
+          <Link id="skills" className="nav-button" to={"skills"}>
+            Skills
+          </Link>
+          <Link id="projects" className="nav-button" to={"projects"}>
+            Projects
+          </Link>
         </div>
-        <Link to={"contact"}>
-          <button id="hire-button">Hire me</button>
-        </Link>
+        <div id="social">
+          <div id="icons">
+            <div className="icon">
+              <a href="https://www.facebook.com/tsilavomaminiaina.rasoloallaoui">
+                <FaFacebookF />
+              </a>
+            </div>
+            <div className="icon">
+              <a href="https://www.linkedin.com/in/rasolo-allaoui-tsilavo-maminiaina-manatombo-948634201">
+                <FaLinkedinIn />
+              </a>
+            </div>
+            <div className="icon">
+              <a href="https://github.com/TsilaAllaoui">
+                <FaGithub />
+              </a>
+            </div>
+          </div>
+          <Link to={"contact"}>
+            <button id="hire-button">Hire me</button>
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
