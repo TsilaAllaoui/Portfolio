@@ -36,7 +36,7 @@ function Skills() {
     { tech: "Mobile Technologies", perf: 90 },
   ];
 
-  const sliceCount = window.screen.width > 400 ? 3 : 1;
+  const sliceCount = window.screen.width > 450 ? 3 : 1;
   const [activeSkills, setActiveSkills] = useState<SkillModel[]>([
     ...skills.slice(0, sliceCount),
   ]);

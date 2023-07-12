@@ -86,7 +86,7 @@ function Projects() {
     },
   ];
 
-  const sliceCount = window.screen.width > 400 ? 3 : 1;
+  const sliceCount = window.screen.width > 450 ? 3 : 1;
 
   const [index, setIndex] = useState(0);
   const [activeProjects, setActiveProjects] = useState(

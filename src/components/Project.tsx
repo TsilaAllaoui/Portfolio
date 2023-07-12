@@ -50,7 +50,7 @@ function Project({
         style={{
           backgroundImage: `url(${project.image})`,
           animation:
-            window.screen.width <= 400
+            window.screen.width <= 4
               ? "move-" +
                 project.scrollDireciton +
                 "ly 15000ms linear infinite alternate"

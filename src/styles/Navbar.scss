@@ -27,7 +27,7 @@
   top: 0;
   left: 0;
   visibility: hidden;
-  z-index: 3;
+  z-index: 10;
 }
 
 #navbar {
@@ -137,7 +137,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   #menu {
     visibility: visible;
     margin: 0.75rem;
@@ -148,9 +148,9 @@
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    height: 50vh;
+    height: 60vh;
     width: 62%;
-    z-index: 2;
+    z-index: 3;
     background-color: black;
     border-radius: 1rem;
     margin-top: 0;
