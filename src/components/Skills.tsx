@@ -36,13 +36,15 @@ function Skills() {
     { tech: "Mobile Technologies", perf: 90 },
   ];
 
+  const sliceCount = window.screen.width > 400 ? 3 : 1;
   const [activeSkills, setActiveSkills] = useState<SkillModel[]>([
-    ...skills.slice(0, 3),
+    ...skills.slice(0, sliceCount),
   ]);
   const [index, setIndex] = useState(0);
 
   const nextSkills = () => {
-    if (skills.slice(index + 3, index + 6).length == 0) return;
+    if (skills.slice(index + sliceCount, index + 2 * sliceCount).length == 0)
+      return;
 
     const indicators: NodeListOf<HTMLDivElement> =
       document.querySelectorAll(".skill-item");
@@ -50,13 +52,12 @@ function Skills() {
       item.style.animation = "fade-out-right 500ms linear";
     });
 
-    setIndex((index) => index + 3);
-    setActiveSkills(skills.slice(index + 3, index + 6));
-    // setTimeout(() => {}, 500);
+    setIndex((index) => index + sliceCount);
+    setActiveSkills(skills.slice(index + sliceCount, index + sliceCount * 2));
   };
 
   const prevSkills = () => {
-    if (skills.slice(index - 3, index).length == 0) return;
+    if (skills.slice(index - sliceCount, index).length == 0) return;
 
     const indicators: NodeListOf<HTMLDivElement> =
       document.querySelectorAll(".skill-item");
@@ -64,15 +65,17 @@ function Skills() {
       item.style.animation = "fade-out-left 500ms linear";
     });
 
-    setIndex((index) => index - 3);
-    setActiveSkills(skills.slice(index - 3, index));
+    setIndex((index) => index - sliceCount);
+    setActiveSkills(skills.slice(index - sliceCount, index));
   };
 
   useEffect(() => {
     const indicators: NodeListOf<HTMLDivElement> =
       document.querySelectorAll(".indicator");
     indicators.forEach((item, i) => {
-      item.style.width = index / 3 == i ? "0.5rem" : "0.3rem";
+      item.style.width = index / sliceCount == i ? "0.75rem" : "0.3rem";
+      item.style.backgroundColor =
+        index / sliceCount == i ? "#740824" : "white";
     });
   }, [index]);
 
@@ -111,13 +114,20 @@ function Skills() {
           </div>
         </div>
         <div id="indicators">
-          {Array.from(Array(Math.floor(skills.length / 3) + 1), (e, i) => {
-            return <div className="indicator" key={i}></div>;
-          })}
+          {Array.from(
+            Array(
+              Math.floor(skills.length / sliceCount) + (sliceCount == 1 ? 0 : 1)
+            ),
+            (e, i) => {
+              return <div className="indicator" key={i}></div>;
+            }
+          )}
         </div>
       </div>
       <div id="other-skills-container">
-        <p>Others</p>
+        <p>
+          <b>Others</b>
+        </p>
         <div id="other-skills">
           <img src={c} title="c" alt="c" />
           <img src={cpp} title="cplusplus" alt="cplusplus" />
