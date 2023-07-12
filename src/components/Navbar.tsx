@@ -26,7 +26,9 @@ function Navbar() {
   const navbarRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const toggleMenu = (event: React.MouseEvent<HTMLDivElement>) => {
+  const toggleMenu = (
+    event: React.MouseEvent<HTMLDivElement | HTMLAnchorElement, MouseEvent>
+  ) => {
     // navbarRef.current!.style.opacity =
     //   navbarRef.current!.style.opacity == "0" ? "100%" : "0";
     console.log(navbarRef.current!.style.transform);
@@ -46,13 +48,23 @@ function Navbar() {
       <div id="navbar" ref={navbarRef}>
         <p id="logo"></p>
         <div id="nav-buttons">
-          <Link id="home" className="nav-button" to={"/"}>
+          <Link id="home" className="nav-button" to={"/"} onClick={toggleMenu}>
             Home
           </Link>
-          <Link id="skills" className="nav-button" to={"skills"}>
+          <Link
+            id="skills"
+            className="nav-button"
+            to={"skills"}
+            onClick={toggleMenu}
+          >
             Skills
           </Link>
-          <Link id="projects" className="nav-button" to={"projects"}>
+          <Link
+            id="projects"
+            className="nav-button"
+            to={"projects"}
+            onClick={toggleMenu}
+          >
             Projects
           </Link>
         </div>
@@ -74,7 +86,7 @@ function Navbar() {
               </a>
             </div>
           </div>
-          <Link to={"contact"}>
+          <Link to={"contact"} onClick={toggleMenu}>
             <button id="hire-button">Hire me</button>
           </Link>
         </div>
