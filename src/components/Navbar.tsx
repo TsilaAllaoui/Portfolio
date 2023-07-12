@@ -29,8 +29,9 @@ function Navbar() {
   const toggleMenu = (
     event: React.MouseEvent<HTMLDivElement | HTMLAnchorElement, MouseEvent>
   ) => {
-    // navbarRef.current!.style.opacity =
-    //   navbarRef.current!.style.opacity == "0" ? "100%" : "0";
+    if (window.screen.width > 450) {
+      return;
+    }
     console.log(navbarRef.current!.style.transform);
     navbarRef.current!.style.transform =
       navbarRef.current!.style.transform == "translateX(0px)"
