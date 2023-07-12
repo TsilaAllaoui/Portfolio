@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Preview from "./Preview";
 import { FaGithub } from "react-icons/fa";
+import { useSwipeable } from "react-swipeable";
 
 function Projects() {
   const projects: ProjectModel[] = [
@@ -120,7 +121,7 @@ function Projects() {
   }, [currentPrieviewItem]);
 
   const updateIndex = (
-    event: React.MouseEvent<SVGElement>,
+    event: React.MouseEvent<SVGElement> | null,
     direction: string
   ) => {
     if (direction == "left" && index > 0) {
@@ -129,6 +130,11 @@ function Projects() {
       setIndex((index) => index + sliceCount);
     }
   };
+
+  const swipeHanlders = useSwipeable({
+    onSwipedLeft: (event) => updateIndex(null, "right"),
+    onSwipedRight: (event) => updateIndex(null, "left"),
+  });
 
   return (
     <div id="projects-container">
@@ -139,7 +145,7 @@ function Projects() {
             : "Here are some of my projects. Feel free to test them. Enjoy!"}
         </h3>
       </div>
-      <div className="projects">
+      <div className="projects" {...swipeHanlders}>
         <div id="prev-container">
           <IoIosArrowBack
             id="prev"

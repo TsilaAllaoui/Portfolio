@@ -24,6 +24,7 @@ import sdl from "../assets/sdl-original.svg";
 import ts from "../assets/typescript-original.svg";
 import vs from "../assets/visualstudio-plain.svg";
 import { element } from "prop-types";
+import { useSwipeable } from "react-swipeable";
 
 function Skills() {
   const skills: SkillModel[] = [
@@ -92,9 +93,14 @@ function Skills() {
     });
   }, []);
 
+  const swipeHanlders = useSwipeable({
+    onSwipedLeft: (event) => nextSkills(),
+    onSwipedRight: (event) => prevSkills(),
+  });
+
   return (
     <div id="skills-container">
-      <div id="skills">
+      <div id="skills" {...swipeHanlders}>
         <h1>Skills</h1>
         <div id="skills-list">
           <div className="prev-container" onClick={prevSkills}>
