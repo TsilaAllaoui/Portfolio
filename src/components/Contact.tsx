@@ -31,6 +31,12 @@ function Contact() {
     element.style.fontSize = "1rem";
   };
 
+  const resetFields = () => {
+    name.current!.value = "";
+    email.current!.value = "";
+    textarea.current!.value = "";
+  };
+
   return (
     <div id="contact">
       <div id="contact-header">
@@ -127,7 +133,7 @@ function Contact() {
                 Send
               </button>
             )}
-            <button>Reset</button>
+            <button onClick={resetFields}>Reset</button>
           </div>
         </div>
       </div>

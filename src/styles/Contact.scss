@@ -246,3 +246,69 @@
     }
   }
 }
+
+@media (max-width: 400px) {
+  #contact {
+    margin-top: 3rem;
+
+    #contact-header {
+      height: 10%;
+      text-align: center;
+    }
+
+    #contact-body {
+      flex-direction: column;
+
+      #infos {
+        width: 100%;
+        border-radius: 1rem 1rem 0 0;
+
+        #first-circle,
+        #second-circle {
+          z-index: 1;
+          margin: -2rem -5rem;
+        }
+
+        #coordinates {
+          z-index: 2;
+
+          p {
+            font-weight: 600;
+          }
+        }
+      }
+
+      #message {
+        width: 100%;
+        border-radius: 0 0 1rem 1rem;
+        align-items: flex-start;
+
+        * {
+          margin-left: 1rem;
+        }
+
+        #text-area {
+          p {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+          }
+
+          text-area {
+            margin-left: 0;
+          }
+          flex-grow: 2;
+        }
+
+        #buttons {
+          width: 100%;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          * {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
