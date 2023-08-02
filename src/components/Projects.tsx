@@ -78,6 +78,18 @@ function Projects() {
       screenshots: ["./projects-bg/MazeRunner/capture.gif"],
     },
     {
+      name: "Sudoku C++",
+      desc: "Sudoku made with C++/SDL2",
+      image: "./projects-bg/Sudoku/start.png",
+      link: "https://github.com/TsilaAllaoui/Sudoku-CPP-SDL2",
+      scrollDireciton: "vertical",
+      screenshots: [
+        "./projects-bg/Sudoku/start.png",
+        "./projects-bg/Sudoku/sudoku.png",
+        "./projects-bg/Sudoku/help.png",
+      ],
+    },
+    {
       name: "RustyChip8",
       desc: "CHIP8 in Rust",
       image: "./projects-bg/placeholder.png",
