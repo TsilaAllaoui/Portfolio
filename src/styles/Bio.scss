@@ -3,6 +3,7 @@
     transform: translateX(25%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -90,16 +91,17 @@
   from {
     transform: scale(1.75) translateX(25%);
   }
+
   to {
     transform: scale(1.75) translateX(0);
   }
 }
 
-@media (min-height: 916px) {
+@media (min-width: 916px) {
   #bio {
     #profile-pic {
-      top: 20rem;
-      left: 5rem;
+      top: 15rem;
+      left: 60%;
       position: absolute;
       transform: scale(1.75);
       animation: scroll2 1500ms linear forwards;

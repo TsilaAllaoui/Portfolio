@@ -2,6 +2,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(10%);
   }
@@ -11,6 +12,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-10%);
   }
@@ -21,6 +23,7 @@
     transform: translateY(25%);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -31,6 +34,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 0;
   }
@@ -40,6 +44,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -55,6 +60,7 @@
 
   #header {
     margin: 1rem 0;
+
     h1 {
       font-size: 1.5rem;
     }
@@ -144,8 +150,17 @@
     height: 100%;
 
     #header {
+
       h3 {
         font-size: 0.8rem;
+      }
+    }
+
+    .projects {
+      #github {
+        a {
+          width: 68%;
+        }
       }
     }
 
